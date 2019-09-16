@@ -1,23 +1,27 @@
 body {
   margin: auto;
-  /* width: 480px; */
+  display: flex;
+  flex-flow: column nowrap;
 }
 
 header, aside, figure, article, footer {
   background:#999999;
-  float: left;
   text-align: center;
-  /* width: 480px; */
 }
 
-header {
+body > header {
   height: 75px;
   line-height: 75px;
 }
 
-aside {
+body > aside {
   height: 150px;
   line-height: 150px;
+}
+
+body > div > main > section:nth-child(2){
+  display: flex;
+  flex-flow: row wrap;
 }
 
 .cd {
@@ -26,58 +30,99 @@ aside {
 }
 
 .efgh {
-  /* height: 250px;
-  line-height: 250px;
-  width: 240px; */
   width: 50%;
   height: 240px;
   line-height: 250px;
 }
 
-footer {
+body > div > footer {
   height: 80px;
   line-height: 80px;
 }
 
-@media /* all and */(min-width: 767px) {
+@media (min-width: 600px) {
   body {
-    width: 960px;
-    margin: auto;
+    flex-flow: row wrap;
   }
   
-  /* NOT NEEDED SINCE IT WAS ALREADY DECLARED
-    header, aside, figure, article, footer {
-    background:#999999;
-    float: left;
-  } */
-  
-  header {
+  body > header {
     height: 100px;
     line-height: 100px;
-    width: 960px;
   }
   
-  aside {
-    height: 600px;
-    line-height: 600px;
-    width: 200px;
-  }
-  
-  .cd {
-    height: 200px;
-    line-height: 200px;
-    width: 380px;
-  }
-  
-  .efgh {
-    height: 250px;
-    line-height: 250px;
-    width: 190px;
-  }
-  
-  footer {
+  body > aside {
     height: 150px;
     line-height: 150px;
-    width: 760px;
+  }
+
+  body > div {
+    display: flex;
+    flex-flow: row wrap;
+    height: 100%;
+  }
+
+  body > div > main section {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  body > div > main section > .cd {
+    height: 150px;
+    line-height: 150px;
+    width: 50%;
+  }
+  
+  body > div > main section > .efgh {
+    height: 200px;
+    line-height: 250px;
+    width: 25%;
+  }
+  
+  body > div > footer {
+    height: 125px;
+    line-height: 125px;
+  }
+}
+
+@media (min-width: 767px) {
+  body {
+    flex-flow: row wrap;
+  }
+  
+  body > header {
+    height: 100px;
+    line-height: 100px;
+  }
+  
+  body > aside {
+    height: 600px;
+    line-height: 600px;
+    width: 20%;
+  }
+
+  body > div {
+    display: flex;
+    flex-flow: row wrap;
+    width: 80%;
+  }
+
+  body > div > main section {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  body > div > main section > .cd {
+    height: 200px;
+    line-height: 200px;
+  }
+  
+  body > div > main section > .efgh {
+    height: 250px;
+    line-height: 250px;
+  }
+  
+  body > div > footer {
+    height: 150px;
+    line-height: 150px;
   }
 }
